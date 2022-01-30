@@ -1,0 +1,91 @@
+<!-- Emily Hoppe CS341 -->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheets/hw2css.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>
+</script>
+<src>
+</head>
+<body>
+
+<!-- Title Section -->
+<h1>Cheesecake Order Form</h1>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" width="150" height="150"> 
+
+<!-- Order Section -->
+<form id="form">
+ <table width=200>
+ <caption style="text-align:left">Quantity Topping</caption>
+    <tr>
+    <!-- Quantity -->
+        <td width=50>
+	    <select> 
+          	<option class="quant" onclick="order.quantity = 3" value="3">3</option>
+  	        <option class="quant" onclick="order.quantity = 7" value="7">7</option>
+  	        <option class="quant" onclick="order.quantity = 10" value="10">10</option>
+	    </select>
+        </td>
+
+    <!-- Topping -->
+        <td>
+	    <div class="radios">
+  	        <input type="radio" id="plain" name="topping" value="Plain" onclick="order.topping = 'Plain'">
+	        <label for="plain">Plain</label>
+	        <br>
+	        <input type="radio" id="cherry" name="topping" value="Cherry" onclick="order.topping = 'Cherry'">
+	        <label for="cherry">Cherry</label>
+	        <br>
+	        <input type="radio" id="chocolate" name="topping" value="Chocolate" onclick="order.topping = 'Chocolate'">
+	        <label for="chocolate">Chocolate</label>
+            </div>
+        </td>
+    </tr>
+  </table> 
+
+
+  <!-- User Input -->
+  <label>Notes:</label> 
+  <br>
+  <textarea id="uinput" rows="3" cols="45" style="font-size: 7pt" placeholder="Enter any special instructions here."></textarea>
+  <br><br>
+  <button type="button" onclick="ordered()">Order</button> 
+
+</form>
+<p id="formSubmitted"></p>
+<p id="formItems"></p>
+<p id="formNotes"></p>
+
+
+<script src="javascripts/script.js"></script>
+
+<!-- Info Section -->
+
+<h3>Info</h3>
+<!-- Style based on: https://tutorialdeep.com/knowhow/open-dropdown-hover-jquery-js/ -->
+<div id="months" style="display:flex, flec-direction: row; justify-content: center; align-items: center">
+   <strong class="line">Orders for  </strong>
+   <select class="line" id="mydropdown" onmouseover="JSDropDown()" onmouseout="this.size=.5;">
+	<option class="month">Jan</option>
+    	<option class="month">Feb</option>
+    	<option class="month">Mar</option>
+	<option class="month">Apr</option>
+    	<option class="month">May</option>
+    	<option class="month">Jun</option>
+	<option class="month">Jul</option>
+    	<option class="month">Aug</option>
+    	<option class="month">Sep</option>
+	<option class="month">Oct</option>
+    	<option class="month">Nov</option>
+    	<option class="month">Dec</option>
+    </select>
+</div>
+<ul>
+    <li>11 cherry</li>
+    <li>17 chocolate</li>
+    <li>31 plain</li>
+</ul> 
+
+</body>
+</html>
+
