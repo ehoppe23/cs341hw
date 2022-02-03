@@ -28,6 +28,7 @@ function ordered(){
 
 function testVegan(){ //tests if "vegan" has been seen in textarea
     var comment =  $('textarea#uinput').val();
+    comment = comment.toLowerCase(); //not tested
     if(comment.includes("vegan")){
     entered.vegan="yes";
     } else {
