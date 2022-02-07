@@ -62,22 +62,23 @@
 <!-- Info Section -->
 
 <h3>Info</h3>
+<script src="javascripts/hovermenu.js"></script>
 <!-- Style based on: https://tutorialdeep.com/knowhow/open-dropdown-hover-jquery-js/ -->
-<div id="months" style="display:flex, flec-direction: row; justify-content: center; align-items: center">
+<div id="months" style="display:flex, flex-direction:row, justify-content:center, align-items:center">
    <strong class="line">Orders for  </strong>
-   <select class="line" id="mydropdown" onmouseover="JSDropDown()" onmouseout="this.size=.5;">
-	<option class="month">Jan</option>
-    	<option class="month">Feb</option>
-    	<option class="month">Mar</option>
-	<option class="month">Apr</option>
-    	<option class="month">May</option>
-    	<option class="month">Jun</option>
-	<option class="month">Jul</option>
-    	<option class="month">Aug</option>
-    	<option class="month">Sep</option>
-	<option class="month">Oct</option>
-    	<option class="month">Nov</option>
-    	<option class="month">Dec</option>
+   <select onchange="requestMonth()" class="line" id="monthmenu" onmouseover="JSDropDown()" onmouseout="this.size=.5;">
+		<option class="month" value="Jan">Jan</option>
+    	<option class="month" value="Feb">Feb</option>
+    	<option class="month" value="Mar">Mar</option>
+		<option class="month" value="Apr">Apr</option>
+    	<option class="month" value="May">May</option>
+    	<option class="month" value="Jun">Jun</option>
+		<option class="month" value="Jul">Jul</option>
+    	<option class="month" value="Aug">Aug</option>
+    	<option class="month" value="Sep">Sep</option>
+		<option class="month" value="Oct">Oct</option>
+    	<option class="month" value="Nov">Nov</option>
+    	<option class="month" value="Dec">Dec</option>
     </select>
 </div>
 <ul>

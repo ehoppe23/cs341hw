@@ -1,9 +1,6 @@
 //Emily Hoppe CS 341
 
 
-/* $(document).ready(function() {
-    $('#uinput').on('input', (event) => testVegan());
-}); */
 
 eventHandler = function( event ) {
     testVegan();
