@@ -40,10 +40,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.post('/orders', function(req, res){
-  console.log(req.body.objectData);
-      res.type('json');
-      res.json({ some: 'json' });
-})
 
 module.exports = app;
