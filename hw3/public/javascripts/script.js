@@ -5,6 +5,7 @@
 eventHandler = function( event ) {
     testVegan();
 }
+
 $(function() {
     $('#uinput').on('input', eventHandler);
 });
@@ -16,7 +17,7 @@ function ordered(){
 	document.getElementById('form').style.display ='none';
 	document.getElementById("formSubmitted").innerHTML = "Thank you! Your order has been placed.";
 	document.getElementById("formItems").innerHTML = "Quantity: " + order.quantity + "	Topping: " + order.topping;
-        document.getElementById("formNotes").innerHTML = "Extra Notes: " + $('textarea#uinput').val();
+    document.getElementById("formNotes").innerHTML = "Extra Notes: " + $('textarea#uinput').val();
     } else {
 	alert('Cheesecake contains dairy!');
     }

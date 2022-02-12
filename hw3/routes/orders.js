@@ -16,8 +16,43 @@ router.get('/', function(req, res, next) {
 });
 
 
+var baseOrder = 
+{
+    error:null,
+    data : [
+        {"che" : {TOPPING:"cherry", QUANTITY:0}},
+        {"cho" : {TOPPING:"plain", QUANTITY:0}},
+        {"pl" : {TOPPING:"chocolate", QUANTITY:0}},
+]};
+
+function getCherry(error, results) {
+    baseOrder.data = results;
+    baseOrder.error = error;
+    arr.data[0].che.quantity = baseOrder.data[0].count;
+}
+
+function getPlain(error, results) {
+    baseOrder.data = results;
+    baseOrder.error = error;
+    arr.data[1].pl.quantity = baseOrder.data[0].count;
+}
+
+function getChocolate(error, results) {
+    baseOrder.data = results;
+    baseOrder.error = error;
+    arr.data[2].cho.quantity = baseOrder.data[0].count;
+}
 router.post('/', function(req, res){
-    res.json(arr);
+    dbms.dbquery("SELECT SUM(QUANTITY) AS count FROM ORDERS WHERE MONTH='" + req.body.month + "' AND TOPPING='cherry';", function(error, results) {
+        getCherry(error, results);
+        dbms.dbquery("SELECT SUM(QUANTITY) AS count FROM ORDERS WHERE MONTH='" + req.body.month + "' AND TOPPING='plain';", function(error, results) {
+            getPlain(error, results);
+            dbms.dbquery("SELECT SUM(QUANTITY) AS count FROM ORDERS WHERE MONTH='" + req.body.month + "' AND TOPPING='chocolate';", function(error, results) {
+                getChocolate(error, results);
+                res.json(arr);
+            });
+        });
+    });
 });
   
 
