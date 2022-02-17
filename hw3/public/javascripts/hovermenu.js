@@ -11,8 +11,8 @@
    
 } */
 function requestMonth(){
-    var value = $(this).value;
-    $.post('/orders', {month: value},function(arr){
+    var value = $('#monthmenu').val().toLowerCase();
+    $.post('/orders', {month: value}, function(arr){
     $("#orderChe").text(arr.data[0].che.quantity +  " cherry");
     $("#orderCho").text(arr.data[1].cho.quantity +  " chocolate");
     $("#orderPl").text(arr.data[2].pl.quantity +  " plain");
