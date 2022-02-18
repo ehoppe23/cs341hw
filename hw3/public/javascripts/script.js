@@ -18,6 +18,17 @@ function ordered(){
 	document.getElementById("formSubmitted").innerHTML = "Thank you! Your order has been placed.";
 	document.getElementById("formItems").innerHTML = "Quantity: " + order.quantity + "	Topping: " + order.topping;
     document.getElementById("formNotes").innerHTML = "Extra Notes: " + $('textarea#uinput').val();
+        
+    var top = order.topping;
+    var num = order.quantity;
+    var note = $('textarea#uinput').val();
+
+    $.post("/neworders", {
+        quantity: num,
+        topping: top,
+        notes: note, 
+    });
+
     } else {
 	alert('Cheesecake contains dairy!');
     }
